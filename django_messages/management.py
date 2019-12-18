@@ -6,7 +6,7 @@ if "pinax.notifications" in settings.INSTALLED_APPS and getattr(settings, 'DJANG
     from pinax.notifications import models as notification
 
     def create_notice_types(sender, **kwargs):
-	    if sender.name == 'pinax.notifications':
+        if sender.name == 'pinax.notifications':
             notification.NoticeType.create("messages_received", _("Message Received"), _("you have received a message"), default=2)
             notification.NoticeType.create("messages_sent", _("Message Sent"), _("you have sent a message"), default=1)
             notification.NoticeType.create("messages_replied", _("Message Replied"), _("you have replied to a message"), default=1)
